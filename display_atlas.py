@@ -13,7 +13,8 @@ if __name__ == "__main__":
     dt = T / N
 
     ## Give random joint angle series
-    model = pinocchio.buildModelFromUrdf(atlas_urdf) # Generate iiwa14 model (7DOF) from URDF
+    root = pinocchio.JointModelFreeFlyer()
+    model = pinocchio.buildModelFromUrdf(atlas_urdf, root) # Generate iiwa14 model (7DOF) from URDF
     for i in range(len(model.frames)):
         print(f"Number : {i}")
         print(model.frames[i])

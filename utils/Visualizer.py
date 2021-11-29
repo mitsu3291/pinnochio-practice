@@ -12,8 +12,8 @@ class Visualizer:
         if path_to_robot_pkg is None:
             path_to_robot_pkg = join(dirname(self.path_to_urdf), '../..')
         self.path_to_robot_pkg = abspath(path_to_robot_pkg)
-        #self.robot = RobotWrapper.BuildFromURDF(path_to_urdf, path_to_robot_pkg, pin.JointModelFreeFlyer())
-        self.robot = RobotWrapper.BuildFromURDF(path_to_urdf, path_to_robot_pkg)
+        self.robot = RobotWrapper.BuildFromURDF(path_to_urdf, path_to_robot_pkg, pin.JointModelFreeFlyer())
+        #self.robot = RobotWrapper.BuildFromURDF(path_to_urdf, path_to_robot_pkg)
         self.viewer = MeshcatVisualizer(self.robot.model, self.robot.collision_model, self.robot.visual_model)
         self.camera_tf = meshcat.transformations.translation_matrix([0.8, -2.0, 0.2]) 
         self.zoom = 0.5
