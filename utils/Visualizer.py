@@ -16,7 +16,7 @@ class Visualizer:
         #self.robot = RobotWrapper.BuildFromURDF(path_to_urdf, path_to_robot_pkg)
         self.viewer = MeshcatVisualizer(self.robot.model, self.robot.collision_model, self.robot.visual_model)
         self.camera_tf = meshcat.transformations.translation_matrix([0.8, -2.0, 0.2]) 
-        self.zoom = 0.5
+        self.zoom = 1.0
         self.play_speed = 1.0
 
     def display_meshcat(self, dt, q_traj, open=True):
