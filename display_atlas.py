@@ -24,16 +24,19 @@ if __name__ == "__main__":
     print(model.getFrameId('r_talus'))
     print(model.getFrameId('l_talus'))
     """
-    for i in range(len(model.joints)):
+
+    #for i in range(len(model.joints)):
         #print(f"Number : {i}")
-        print(model.names[i])
-        print(model.joints[i])
-    """
+        #print(model.names[i])
+        #print(model.joints[i])
     for i in range(len(model.frames)):
         print(f"Number : {i}")
         print(model.frames[i].name)
-    """
 
+    print(model.getFrameId('universe'))
+    print(model.getFrameId('l_clav'))
+
+    """
     q_traj = []
     q0 = pinocchio.normalize(model, np.zeros(model.nq))
     q0[2] = 1.0
@@ -46,3 +49,4 @@ if __name__ == "__main__":
     ## Visualize
     visualizer = Visualizer(atlas_urdf)
     visualizer.display_meshcat(dt=dt, q_traj=q_traj)
+    """
